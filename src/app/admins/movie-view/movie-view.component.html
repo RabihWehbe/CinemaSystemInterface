@@ -1,0 +1,11 @@
+<div>
+    <h2>Movie</h2>
+    <p>{{movie._id}}</p>
+    <p>{{movie.Mname}}</p>
+    <p>{{movie.Mgenere}}</p>
+    <p>{{movie.Mrate}}</p>
+</div>
+  <div style="margin-bottom: 4px;">
+    <img [src]="movie.Mimg" [alt]="movie.Mname" height="200px" width="200px">
+  </div>
+  <button style="background-color: red;" (click)="delete()">delete</button>

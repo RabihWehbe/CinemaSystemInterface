@@ -1,0 +1,58 @@
+<navcomp></navcomp>
+
+<h3>Enter cast Infos</h3>
+
+<div>
+  <!-- <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+  
+    <input type="submit" value="Submit">
+  </form> -->
+
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <div>
+      <input type="text" formControlName="Cname" placeholder="enter the name"> 
+    </div>
+    <div>
+      <input type="text" formControlName="Cdesc" placeholder="enter the description"> 
+    </div>
+    <div>
+      <input type="text" formControlName="Cnationality" placeholder="enter the nationality"> 
+    </div>
+    <div>
+      <!-- any change coming from dom has event associated with it -->
+      <input (change)="onFileSelect($event)" type="file">
+    </div>
+
+    <div *ngIf="imageData">
+      <img [src]="imageData" [alt]="form.value.name" height="200px" width="200px">
+    </div>
+    <div>
+      <button type="submit">submit file</button>
+    </div>
+  </form>
+  
+</div>
+
+<!-- <div style="margin-top: 20px;">
+  <button (click)="viewCasts()">View Casts</button>
+</div> -->
+
+<div style="margin-top: 20px;">
+  <div style="margin-top: 7px;border:1px black solid" *ngFor="let c of casts">
+    <cast-view [cast]="c" (isdeleted)="onDelete($event)"></cast-view>
+  </div>
+</div>
+
+

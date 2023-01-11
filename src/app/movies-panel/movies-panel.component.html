@@ -1,0 +1,45 @@
+<navcomp></navcomp>
+
+<h3>Enter cast Infos</h3>
+
+<div>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <div>
+      <input type="text" formControlName="Mname" placeholder="enter movie name"> 
+    </div>
+    <div>
+        <select formControlName="Mgenere" aria-placeholder="select">
+            <option value="comedy">comedy</option>
+            <option value="action">action</option>
+            <option value="drama">drama</option>
+            <option value="Sci fi">Sci fi</option>
+          </select> 
+    </div>
+    <div>
+      <input type="number" formControlName="Mrate" placeholder="movie rate" min="1" max="9.9"> 
+    </div>
+
+    <div>
+        <input type="text" formControlName="Myear" placeholder="movie release year"> 
+    </div>
+
+    <div>
+      <!-- any change coming from dom has event associated with it -->
+      <input (change)="onFileSelect($event)" type="file">
+    </div>
+
+    <div *ngIf="imageData">
+      <img [src]="imageData" [alt]="form.value.name" height="200px" width="200px">
+    </div>
+    <div>
+      <button type="submit">submit file</button>
+    </div>
+  </form>
+  
+</div>
+
+<div style="margin-top: 20px;">
+  <div style="margin-top: 7px;border:1px black solid" *ngFor="let m of movies">
+    <movie-view [movie]="m"></movie-view>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<navcomp></navcomp>
+
+<form>
+    <div *ngFor="let i of cmsList">
+      <label>Movie {{i + 1}}:</label>
+      <input type="text" [(ngModel)]="Mnames[i]" name="Mname{{i}}">
+      <br>
+      <label>Cast {{i+1}}:</label>
+      <input type="text" [(ngModel)]="Cnames[i]" name="Cname{{i}}">
+    </div>
+    <button (click)="addMovieCasts()">Add Record</button>
+    <button (click)="sendRecords()">Send Records</button>
+  </form>
+
+  <div *ngIf="checkers.length > 0">
+    <span *ngFor="let i of checkers" style="color: red;">
+      Invalid cast or movie name of Cast: {{i.Cname}}, Movie: {{i.Mname}}
+    </span><br>
+  </div>
+  

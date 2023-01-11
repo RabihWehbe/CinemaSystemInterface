@@ -1,0 +1,11 @@
+<div>
+    <h2>Cast:</h2>
+    <p>{{cast._id}}</p>
+    <p>{{cast.Cname}}</p>
+    <p>{{cast.Cdesc}}</p>
+    <p>{{cast.Cnationality}}</p>
+</div>
+  <div style="margin-bottom: 4px;">
+    <img [src]="cast.Cimg" [alt]="cast.Cname" height="200px" width="200px">
+  </div>
+  <button style="background-color: red;" (click)="delete()">delete</button>
