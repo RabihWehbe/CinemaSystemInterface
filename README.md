@@ -15,4 +15,7 @@ This application is still under progress many ideas would be rendered to it with
 
 The application is written using angular;with help of express api developed in typescript; it contaions many concepts of angular such as services,lazy loading,componatizing html template,linking to express api, Observer and Observable pattern using Subjects and Subscriptions and much more...
 
+for further details about the backend, please follow the link of the following repository:
+https://github.com/RabihWehbe/CinemaSystemBackend.git
+
 it is important to mention that I didn't design the interface,rather I convert a web template to an angular web app.
